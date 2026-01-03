@@ -17,3 +17,29 @@ print("Available stocks and prices:")
 for stock, price in stock_prices.items():
     print(f"{stock} : ₹{price}")
 
+#🔹 PART 2: User Input Loop for Adding Stocks
+
+print("\nEnter stock details (type 'done' to finish):")
+
+# Input loop
+while True:
+    stock_name = input("Enter stock name: ").upper()
+
+    if stock_name == "DONE":
+        break
+
+    if stock_name not in stock_prices:
+        print("❌ Stock not available. Please choose from the list.\n")
+        continue
+
+    try:
+        quantity = int(input("Enter quantity: "))
+        if quantity <= 0:
+            print("❌ Quantity must be greater than zero.\n")
+            continue
+    except ValueError:
+        print("❌ Please enter a valid number.\n")
+        continue
+
+    portfolio[stock_name] = portfolio.get(stock_name, 0) + quantity
+    print("✅ Stock added successfully!\n")
