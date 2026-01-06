@@ -9,3 +9,7 @@ elif user_input == "bye":
     return "Goodbye! 👋 Have a nice day!"  
 else:  
     return "Sorry, I don't understand that"
+
+print("🤖 Chatbot is running...")
+print("Type 'hello', 'how are you', or 'bye' to chat.")
+print("Type 'bye' to exit.\n")
